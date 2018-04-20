@@ -1,6 +1,6 @@
 {
   "name": "react-expressjs-boilerplate",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "React and ExpressJS together to offer a JSON API through ExpressJS &amp; a nice frontend through React",
   "main": "index.js",
   "scripts": {
