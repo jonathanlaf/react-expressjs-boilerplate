@@ -4,7 +4,11 @@
   "description": "React and ExpressJS together to offer a JSON API through ExpressJS &amp; a nice frontend through React",
   "main": "src/index.js",
   "scripts": {
+<<<<<<< HEAD
     "start": "cross-env NODE_ENV=development node scripts/start-dev-server  --env.dev",
+=======
+    "start": "node scripts/start-dev-server",
+>>>>>>> master
     "build": "rm -Rf build/* && npm run build-browser && npm run build-server",
     "build-browser": "node scripts/build-browser",
     "build-server": "node scripts/build-server"
@@ -13,12 +17,16 @@
     "type": "git",
     "url": "https://github.com/jonathanlaf/react-expressjs-boilerplate.git"
   },
+<<<<<<< HEAD
   "keywords": [
     "react",
     "expressjs",
     "webpack",
     "webpack-dev-middleware"
   ],
+=======
+  "keywords": ["react","expressjs","webpack","webpack-dev-middleware"],
+>>>>>>> master
   "author": "Jonathan Lafleur <me@jonathanlafleur.ca>",
   "license": "GNU3",
   "bugs": {
