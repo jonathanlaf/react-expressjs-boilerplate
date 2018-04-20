@@ -4,26 +4,64 @@
   "description": "React and ExpressJS together to offer a JSON API through ExpressJS &amp; a nice frontend through React",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cross-env NODE_ENV=development node scripts/start-dev-server  --env.dev",
+    "build": "rm -Rf build/* && npm run build-browser && npm run build-server",
+    "build-browser": "node scripts/build-browser",
+    "build-server": "node scripts/build-server"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jonathanlaf/react-expressjs-boilerplate.git"
+    "url": "https://github.com/jonathanlaf/react-expressjs-boilerplate.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "react",
+    "expressjs",
+    "webpack",
+    "webpack-dev-middleware"
+  ],
+  "author": "Jonathan Lafleur <me@jonathanlafleur.ca>",
+  "license": "GNU3",
   "bugs": {
     "url": "https://github.com/jonathanlaf/react-expressjs-boilerplate/issues"
   },
   "homepage": "https://github.com/jonathanlaf/react-expressjs-boilerplate#readme",
   "dependencies": {
+    "autoprefixer": "^8.3.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.4",
     "express": "^4.16.3",
+    "express-history-api-fallback": "^2.2.1",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-hot-loader": "^3.1.3",
     "react-router-dom": "^4.2.2",
-    "webpack": "^4.6.0",
-    "webpack-dev-middleware": "^3.1.2",
-    "webpack-hot-middleware": "^2.22.1"
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "^1.12.2",
+    "webpack-hot-middleware": "^2.21.2"
+  },
+  "babel": {
+    "presets": [
+      ["react"],
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "ie >= 9"
+            ]
+          },
+          "loose": true
+        }
+      ]
+    ]
   }
 }
