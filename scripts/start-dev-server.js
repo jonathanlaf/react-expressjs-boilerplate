@@ -5,6 +5,7 @@
 
 const webpack = require('webpack');
 const express = require('express');
+const bodyParser           = require('body-parser');
 const WebpackDevMiddleware = require('webpack-dev-middleware');
 const WebpackHotMiddleware = require('webpack-hot-middleware');
 const fallback = require('express-history-api-fallback');
@@ -39,6 +40,9 @@ try {
 		const compiler = webpack(webpackConfig(env));
 		const devMiddleware = WebpackDevMiddleware(compiler, devServerConfig);
 		const hotMiddleware = WebpackHotMiddleware(compiler);
+
+		app.use(bodyParser.urlencoded({extended: true}));
+		app.use(bodyParser.json());
 		app.use(devMiddleware);
 		app.use(hotMiddleware);
 		app.listen(port, 'localhost', err => {
