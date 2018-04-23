@@ -58,7 +58,7 @@ try
 				{
 						console.error(err);
 				}
-				console.log(`Server listening to port ${port}`);
+				console.log(`Server started available at http://localhost:${port}`);
 		});
 }
 catch (e)
