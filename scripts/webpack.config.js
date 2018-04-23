@@ -15,7 +15,7 @@ module.exports = (env) => {
 						app: removeEmpty([
 								ifDev('react-hot-loader/patch'),
 								ifDev(`webpack-hot-middleware/client?http://localhost:${env.port}`),
-								path.join(__dirname, '../src/index.js')
+								path.join(__dirname, '../src/frontend/index.js')
 						]),
 						vendor: ['react', 'react-dom'],
 				},
