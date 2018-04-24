@@ -25,7 +25,7 @@
     "test:lint:js:fix": "eslint --fix .",
     "start:react": "react-app-rewired start",
     "start:express": "cd .. && npm run start:express",
-    "eject": "react-app-rewired eject",
+    "eject": "react-app-rewired eject"
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
