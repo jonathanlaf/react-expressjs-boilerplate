@@ -3,8 +3,15 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "start": "concurrently --names \"API,REACT\" -c \"bgBlue.bold,bgMagenta.bold\"  --allow-restart  --restart-tries 0 \"npm run start:express\" \"cd ./client && npm run start:react\" ",
     "start:express": "cross-env PORT=3001 NODE_ENV=development nodemon --inspect ./bin/www",
-    "start": "concurrently --names \"API,REACT\" -c \"bgBlue.bold,bgMagenta.bold\"  --allow-restart  --restart-tries 0 \"npm run start:express\" \"cd ./client && npm run start:react\" "
+    "start:react": "cd ./client && npm run start:react",
+    "test:lint": "npm run test:lint:css && npm run test:lint:js",
+    "test:lint:fix": "npm run test:lint:css:fix && npm run test:lint:js:fix",
+    "test:lint:js": "eslint .",
+    "test:lint:css": "cd ./client && stylelint \"**/*.css\"",
+    "test:lint:js:fix": "eslint --fix .",
+    "test:lint:css:fix": "cd ./client && stylelint --fix \"**/*.css\""
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -21,5 +28,12 @@
     "ignore": [
       "client/*"
     ]
+  },
+  "devDependencies": {
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0"
   }
 }

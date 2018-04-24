@@ -15,11 +15,28 @@ React and ExpressJS together to offer a JSON API through ExpressJS &amp; a nice 
 - Routing with React-Router for client
 - ExpressJS Route for API
 
-## Installation and starting
+## Installation
 ```
-- npm install
+- npm i
+- npm i -g stylelint eslint
+```
+
+## Start project
+```
 - npm start
 - Open browser at [http://localhost:3000](http://localhost:3000)
+```
+
+## Linting
+To lint your project, you can from the main directory run one one theses command (self-explanatory)
+```
+- npm run test:lint /* Run both of the following */
+- npm run test:lint:js
+- npm run test:lint:css
+
+- npm run test:lint:fix /* Run both of the following */
+- npm run test:lint:js:fix
+- npm run test:lint:css:fix
 ```
 
 ### Building for production
@@ -54,5 +71,5 @@ react-expressjs-boilerplate
 
 - [X] Make React router work
 - [X] Pass --inspect to node process
-- [ ] Add linter without ejecting from create-react-app
+- [X] Add linter without ejecting from create-react-app
 - [ ] Add SASS without ejecting from create-react-app
