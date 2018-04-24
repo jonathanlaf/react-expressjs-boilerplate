@@ -6,6 +6,7 @@
     "start": "concurrently --names \"API,REACT\" -c \"bgBlue.bold,bgMagenta.bold\"  --allow-restart  --restart-tries 0 \"npm run start:express\" \"cd ./client && npm run start:react\" ",
     "test:lint": "npm run test:lint:css && npm run test:lint:js",
     "test:lint:fix": "npm run test:lint:css:fix && npm run -s test:lint:js:fix",
+    "build": "cd ./client && npm run build",
     "start:express": "cross-env PORT=3001 NODE_ENV=development nodemon --inspect ./bin/www",
     "start:react": "cd ./client && npm run start:react",
     "test:lint:js": "npm run test:lint:js:run && cd ./client && npm run test:lint:js:run",

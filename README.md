@@ -17,18 +17,18 @@ React and ExpressJS together to offer a JSON API through ExpressJS &amp; a nice 
 
 ## Installation
 ```
-- npm i
-- npm i -g stylelint eslint
+- npm i && cd ./client && npm i 
 ```
 
 ## Start project
+> Make sure you are in the root folder, not in the client folder.
 ```
 - npm start
 - Open browser at [http://localhost:3000](http://localhost:3000)
 ```
 
 ## Linting
-To lint your project, you can from the main directory run one one theses command (self-explanatory)
+> Make sure you are in the root folder, not in the client folder.
 ```
 - npm run test:lint /* Run both of the following */
 - npm run test:lint:js
