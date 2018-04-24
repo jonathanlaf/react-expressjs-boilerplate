@@ -1,19 +1,19 @@
 # React ExpressJS Boilerplate
 
-> Based on [MobX Boilerplate](https://github.com/Mosho1/react-mobx-boilerplate).
+> Based on [Dave Ceddia tutorial](https://daveceddia.com/) - [Deploy React and Express to Heroku](https://daveceddia.com/deploy-react-express-app-heroku/) &  [Create React App with an Express Backend](https://daveceddia.com/create-react-app-express-backend/).
 
 React and ExpressJS together to offer a JSON API through ExpressJS &amp; a nice frontend through React
 
 ## Stack
 - React
 - ExpressJS
-- Webpack 3
-- CSS Modules
 
 ## Features
-- HMR of components
+- HMR of components (React)
+- Restart Express on file changes (Limited to Express files)
 - Code-splitting out of the box
-- Routing with React-Router for frontend, and ExpressJS for API
+- Routing with React-Router for client
+- ExpressJS Route for API
 
 ## Installation and starting
 ```
@@ -24,33 +24,35 @@ React and ExpressJS together to offer a JSON API through ExpressJS &amp; a nice 
 
 ### Building for production
 ```
-Not ready yet...
+- cd ./client && npm run build 
 ```
 
 ### Structure
 ```
 react-expressjs-boilerplate
-└───src/
-    │
-    ├─── api/
-    ├────── express-router.js /* All ExpressJS routes for API Call */
-    ├─── frontend/
-    ├────── components/
-    ├───────── App
-    ├──────────── App.js /* General rendered HTML structure */
-    ├───────── Layout
-    ├──────────── Header.js /* Header declared in App.js */
-    ├──────────── Footer.js /* Footer declared in App.js */
-    ├───────── Router
-    └──────────── Router.js /* All React Routes & States */
+├─── bin/
+├────── www /* ExpressJS start script */
+├─── client/
+├────── components/
+├───────── App
+├──────────── App.js /* General rendered HTML structure */
+├───────── Layout
+├──────────── Header.js /* Header declared in App.js */
+├──────────── Footer.js /* Footer declared in App.js */
+├───────── Router
+├──────────── Router.js /* All React Routes & States */
+├─── routes/
+├────── users.js /* Demo route */
+├─── App.js /* Handle Express JS magic */
+├─── LICENSE /* Share the Knowledge */
+├─── package.json
+├─── package-lock.json
+└─── README.md
 ```
 
 ## TODO
 
-- [ ] Make React router work
-- [ ] Pass --inspect to node process
-- [ ] Add support for map files (Chrome dev tools debugging)
-- [ ] Upgrade to webpack 4
-- [ ] Add linter
-- [ ] Add SASS
-- [ ] Create Server build script
+- [X] Make React router work
+- [X] Pass --inspect to node process
+- [ ] Add linter without ejecting from create-react-app
+- [ ] Add SASS without ejecting from create-react-app

@@ -5,12 +5,11 @@ class notFound extends Component {
 		render()
 		{
 				const RedirectToHomepageBtn = withRouter(
-						({history}) => <Button bsStyle="primary"
+						({history}) => <button
 						                       onClick={() => { history.push('/'); }}>
 								Go to homepage
-						</Button>);
-				return (<Grid>
-								<Jumbotron>
+						</button>);
+				return (<React.fragment>
 										<h1>Page not found.</h1>
 										<p>
 												The URL "{this.props.location.pathname}" is not
@@ -20,8 +19,7 @@ class notFound extends Component {
 										<p>
 												<RedirectToHomepageBtn/>
 										</p>
-								</Jumbotron>
-						</Grid>);
+						</React.fragment>);
 		}
 }
 

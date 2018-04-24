@@ -7,18 +7,21 @@ import notFound  from '../notFound/notFound';
 
 class Router extends Component {
 
-		constructor()
-		{
-				super();
-				this.state = {
-						boilerplateVersion: '0.0.1'
-				};
+
+		state = {
+				users:[]
+		};
+
+		componentDidMount() {
+				fetch('/api/users')
+						.then(res => res.json())
+						.then(users => this.setState({ users }));
 		}
 
 		render()
 		{
 				return (<Switch>
-						<Route exact path='/' component={() => <Homepage boilerplateVersion={this.state.boilerplateVersion}/>}/>
+						<Route exact path='/' component={() => <Homepage users={this.state.users}/>}/>
 						<Route path="/dashboard" exact component={Dashboard}/>
 						<Route component={notFound}/>
 				</Switch>);
