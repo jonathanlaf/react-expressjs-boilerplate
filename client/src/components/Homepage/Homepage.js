@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Homepage = ({ users }) => (
   <section>
@@ -12,5 +13,9 @@ const Homepage = ({ users }) => (
     </article>
   </section>
 );
+
+Homepage.propTypes = {
+  users: PropTypes.array.isRequired
+};
 
 export default Homepage;
