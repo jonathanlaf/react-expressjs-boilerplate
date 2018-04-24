@@ -4,14 +4,15 @@
   "private": true,
   "scripts": {
     "start": "concurrently --names \"API,REACT\" -c \"bgBlue.bold,bgMagenta.bold\"  --allow-restart  --restart-tries 0 \"npm run start:express\" \"cd ./client && npm run start:react\" ",
+    "test:lint": "npm run test:lint:css && npm run test:lint:js",
+    "test:lint:fix": "npm run test:lint:css:fix && npm run -s test:lint:js:fix",
     "start:express": "cross-env PORT=3001 NODE_ENV=development nodemon --inspect ./bin/www",
     "start:react": "cd ./client && npm run start:react",
-    "test:lint": "npm run test:lint:css && npm run test:lint:js",
-    "test:lint:fix": "npm run test:lint:css:fix && npm run test:lint:js:fix",
-    "test:lint:js": "eslint .",
-    "test:lint:css": "cd ./client && stylelint \"**/*.css\"",
-    "test:lint:js:fix": "eslint --fix .",
-    "test:lint:css:fix": "cd ./client && stylelint --fix \"**/*.css\""
+    "test:lint:js": "npm run test:lint:js:run && cd ./client && npm run test:lint:js:run",
+    "test:lint:css": "cd ./client && npm run test:lint:css",
+    "test:lint:js:run": "eslint .",
+    "test:lint:css:fix": "cd ./client && npm run test:lint:css:fix",
+    "test:lint:js:fix": "eslint --fix ."
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -30,7 +31,8 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^4.9.0",
+    "babel-eslint": "^8.2.3",
+    "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",

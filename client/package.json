@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "prop-types": "^15.6.1",
     "react": "^16.3.2",
     "react-app-rewire-hot-loader": "^1.0.1",
     "react-app-rewired": "^1.5.0",
@@ -13,19 +14,27 @@
   },
   "scripts": {
     "start": "cd .. && npm run start",
-    "start:react": "react-app-rewired start",
-    "start:express": "cd .. && npm run start:express",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
-    "eject": "react-app-rewired eject"
+    "test:lint": "npm run test:lint:css && npm run test:lint:js",
+    "test:lint:css": "stylelint \"**/*.css\"",
+    "test:lint:js": "npm run test:lint:js:run  && cd .. && npm run test:lint:js:run",
+    "test:lint:js:run": "eslint .",
+    "test:lint:fix": "npm run test:lint:css:fix && npm run test:lint:js:fix",
+    "test:lint:css:fix": "stylelint --fix \"**/*.css\"",
+    "test:lint:js:fix": "eslint --fix .",
+    "start:react": "react-app-rewired start",
+    "start:express": "cd .. && npm run start:express",
+    "eject": "react-app-rewired eject",
   },
   "proxy": "http://localhost:3001",
   "devDependencies": {
+    "babel-eslint": "^8.2.3",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.4.0",
+    "eslint-plugin-react": "^7.7.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0"
   }
