@@ -72,4 +72,4 @@ react-expressjs-boilerplate
 - [X] Make React router work
 - [X] Pass --inspect to node process
 - [X] Add linter without ejecting from create-react-app
-- [X] Add SASS without ejecting from create-react-app ([Doc found](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc), no interest for now since i'm not doing any SASS.)
+- [X] Add SASS without ejecting from create-react-app ([Doc found](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#adding-a-css-preprocessor-sass-less-etc), no interest for now since ~~i'm not doing any SASS~~ it's not recommended in React doc.)
